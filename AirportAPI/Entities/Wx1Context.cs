@@ -27,10 +27,11 @@ public partial class Wx1Context : DbContext
     {
         modelBuilder.Entity<Formdatum>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("formdata");
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
 
+            entity.ToTable("formdata");
+
+            entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Airport)
                 .HasMaxLength(500)
                 .HasColumnName("airport");
