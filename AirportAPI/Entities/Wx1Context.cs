@@ -15,6 +15,8 @@ public partial class Wx1Context : DbContext
     {
     }
 
+    public virtual DbSet<Formdatum> Formdata { get; set; }
+
     public virtual DbSet<Wxdatum> Wxdata { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -23,6 +25,29 @@ public partial class Wx1Context : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Formdatum>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("formdata");
+
+            entity.Property(e => e.Airport)
+                .HasMaxLength(500)
+                .HasColumnName("airport");
+            entity.Property(e => e.Comments)
+                .HasMaxLength(10000)
+                .HasColumnName("comments");
+            entity.Property(e => e.Email)
+                .HasMaxLength(255)
+                .HasColumnName("email");
+            entity.Property(e => e.FirstName)
+                .HasMaxLength(255)
+                .HasColumnName("firstName");
+            entity.Property(e => e.LastName)
+                .HasMaxLength(255)
+                .HasColumnName("lastName");
+        });
+
         modelBuilder.Entity<Wxdatum>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");

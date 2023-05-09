@@ -5,7 +5,7 @@ namespace AirportAPI.Entities;
 
 public partial class Wxdatum
 {
-    public long? Id { get; set; }
+    public long Id { get; set; }
 
     public float? Humidity { get; set; }
 
@@ -15,7 +15,7 @@ public partial class Wxdatum
 
     public float? Winddirection { get; set; }
 
-    public DateTime? Date { get; set; }
+    public DateTime Date { get; set; }
 
     public string? Identifier { get; set; }
 }

@@ -1,6 +1,3 @@
-response =
-  '[{"id":7979,"humidity":90,"temperature":50,"windspeed":55,"winddirection":359,"date":"2023-05-07T19:18:38Z","identifier":"42i"},{"id":7978,"humidity":90,"temperature":50,"windspeed":55,"winddirection":359,"date":"2023-05-07T19:14:29Z","identifier":"42i"},{"id":7977,"humidity":90,"temperature":50,"windspeed":55,"winddirection":359,"date":"2023-05-07T19:09:35Z","identifier":"42i"},{"id":7976,"humidity":90,"temperature":50,"windspeed":55,"winddirection":359,"date":"2023-05-07T19:08:05Z","identifier":"42i"},{"id":7975,"humidity":90,"temperature":50,"windspeed":55,"winddirection":359,"date":"2023-05-07T19:03:59Z","identifier":"42i"},{"id":7974,"humidity":85,"temperature":30,"windspeed":23,"winddirection":129,"date":"2023-05-05T02:18:16Z","identifier":"42i"}]';
-
 function processData(response) {
   let counter = 1;
   let parsedData = JSON.parse(response);
@@ -100,3 +97,39 @@ function processData(response) {
   document.getElementById("timestamp").innerHTML =
     today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 }
+
+updateData();
+setInterval(updateData, 30000);
+let resJson;
+let res;
+let selectedUnits = "mph";
+const KTS_CONVERSION_RATE = 0.868976;
+
+function switchUnit() {
+    currentVal = selectedUnits;
+    if (currentVal == "mph") {
+        selectedUnits = "kts";
+        document.getElementById("unitSwitcher").innerHTML = "Switch to MPH"
+    } else if (currentVal == "kts") {
+        selectedUnits = "mph";
+        document.getElementById("unitSwitcher").innerHTML = "Switch to kts"
+    }
+    updateData();
+}
+
+
+function updateData() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            res = this.responseText;
+            processData(res);
+
+        }
+    };
+    xhttp.open("GET", "/api/wx/42i", true);
+
+    xhttp.send();
+}
+
+

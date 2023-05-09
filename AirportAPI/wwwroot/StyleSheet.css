@@ -1,0 +1,102 @@
+﻿html, body {
+    background-image: linear-gradient(to top left, #C9F6FF, #65DDEF);
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+}
+
+.background {
+    position: relative;
+    margin: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.center {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.rotate {
+    transform: translate(-50%, -50%) rotate(270deg);
+}
+
+
+@media screen and (max-width: 420px) {
+    .background {
+        background-image: url("images/thumbnail_compass 3_small.png");
+        height: 300px;
+        width: 300px;
+    }
+
+    #tableDiv {
+        margin: auto;
+    }
+
+    .center {
+        background-image: url("images/red-sticker-arrow-3-doubled.png");
+        width: 180px;
+        height: 60px;
+    }
+}
+
+@media screen and (min-width: 421px) {
+    .background {
+        background-image: url("images/thumbnail_compass 3-medium.png");
+        height: 420px;
+        width: 420px;
+    }
+
+    #tableDiv {
+        margin: auto;
+    }
+
+    .center {
+        background-image: url("images/red-sticker-arrow-3-doubled.png");
+        width: 300px;
+        height: 100px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .background {
+        background-image: url("images/thumbnail_compass-large.png");
+        height: 600px;
+        width: 600px;
+    }
+
+    .center {
+        background-image: url("images/red-sticker-arrow-3-doubled.png");
+        width: 500px;
+        height: 130px;
+    }
+
+    #tableDiv {
+        margin: auto;
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .background {
+        background-image: url("images/compass 3.png");
+        height: 720px;
+        width: 720px;
+    }
+
+    #tableDiv {
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .center {
+        background-image: url("images/red-sticker-arrow-3-doubled.png");
+        width: 600px;
+        height: 180px;
+    }
+}
