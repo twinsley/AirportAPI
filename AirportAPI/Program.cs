@@ -1,6 +1,8 @@
+using AirportAPI;
 using AirportAPI.Entities;
 using Microsoft.EntityFrameworkCore;
 using MySql.EntityFrameworkCore.Extensions;
+using SendGrid.Helpers.Mail;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>

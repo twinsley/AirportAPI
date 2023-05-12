@@ -8,10 +8,11 @@ function formSubmit() {
     let formData = { firstName: firstName.value, lastName: lastName.value, email: email.value, airport: airport.value, comments: comments.value };
 
     console.log(formData)
-    postData("/api/form", formData).then((data) => {
+    postData("/api/formdata", formData).then((data) => {
         console.log(data); // JSON data parsed by `data.json()` call
     });
 }
+
 async function postData(url = "", data = {}) {
 
     const response = await fetch(url, {

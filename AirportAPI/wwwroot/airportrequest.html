@@ -20,27 +20,27 @@
         <div class="d-flex justify-content-center pt-5"><h4>Request an Airport</h4></div>
         <div class="d-flex justify-content-center">
             <p class="text-center" style="width: 50rem;">Due to expense and time constraints, we cannot guarantee that a requested airport will be added. However, if you would like to see your local airport’s weather on this site, please fill in the form below and we will consider adding it.</p>
-           </div>
+        </div>
         <div class="row">
             <div class="col-6" style="margin: auto;">
-                <form>
+                <form id="form">
                     <div class="row mb-3">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="First name" id="firstName">
+                            <input type="text" class="form-control" placeholder="First name" id="firstName" required>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Last name" id="lastName">
+                            <input type="text" class="form-control" placeholder="Last name" id="lastName" required>
                         </div>
                     </div>
-                    <input type="email" class="form-control mb-3" id="inputEmail" aria-describedby="emailHelp" placeholder="Email">
+                    <input type="email" class="form-control mb-3" id="inputEmail" aria-describedby="emailHelp" placeholder="Email" required>
 
-                    <input type="text" class="form-control mb-3" placeholder="Airport name and Identifier" id="airportId">
+                    <input type="text" class="form-control mb-3" placeholder="Airport name and Identifier" id="airportId" required>
                     <textarea class="form-control mb-3" id="commentBox" rows="3" placeholder="Comments?"></textarea>
-                    <input type="button" class="btn btn-secondary" onclick="formSubmit()" value="Submit">
+                    <input type="submit" class="btn btn-secondary" onclick="formSubmit()" value="Submit">
                 </form>
             </div>
         </div>
-        </div>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
