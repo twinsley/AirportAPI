@@ -98,7 +98,7 @@ namespace AirportAPI.Controllers
             _context.Formdata.Add(formdatum);
             await _context.SaveChangesAsync();
             String emailData = $"First name: {formdatum.FirstName} \nLast name: {formdatum.LastName} \nEmail: {formdatum.Email} \n Airport: {formdatum.Airport} \nComments: {formdatum.Comments}";
-            await SendEmail(emailData);
+           // await SendEmail(emailData);
 
             return CreatedAtAction("GetFormdatum", new { id = formdatum.Id }, formdatum);
         }

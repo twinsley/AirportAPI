@@ -1,0 +1,21 @@
+{
+  
+    "short_name": "AirportWX",
+    "name": "AirportWX",
+    "icons": [
+      {
+        "src": "images/airplane.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "any maskable"
+      }
+    ],
+    "id": "/?source=pwa",
+    "start_url": "/",
+    "background_color": "#C9F6FF",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#C9F6FF"
+
+
+  }

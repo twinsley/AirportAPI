@@ -131,5 +131,3 @@ function updateData() {
 
     xhttp.send();
 }
-
-
