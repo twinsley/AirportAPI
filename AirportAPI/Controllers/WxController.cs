@@ -96,7 +96,8 @@ namespace AirportAPI.Controllers
             _context.Wxdata.Add(wxdatum);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("PostWxdatum", new { id = wxdatum.Id }, wxdatum);
+            // return CreatedAtAction("PostWxdatum", new { id = wxdatum.Id }, wxdatum);
+            return Ok();
         }
 
         // DELETE: api/Wx/5
