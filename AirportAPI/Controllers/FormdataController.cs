@@ -10,6 +10,7 @@ using MailKit.Net.Smtp;
 using MailKit;
 using MimeKit;
 using NuGet.Protocol;
+using AirportAPI.Areas.Identity.Data;
 
 namespace AirportAPI.Controllers
 {

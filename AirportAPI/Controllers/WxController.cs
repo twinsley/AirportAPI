@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using AirportAPI.Entities;
 using NuGet.Protocol;
 using Microsoft.AspNetCore.Cors;
+using AirportAPI.Areas.Identity.Data;
 
 namespace AirportAPI.Controllers
 {

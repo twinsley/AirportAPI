@@ -1,8 +1,9 @@
 using AirportAPI;
-using AirportAPI.Entities;
 using Microsoft.EntityFrameworkCore;
 using MySql.EntityFrameworkCore.Extensions;
 using SendGrid.Helpers.Mail;
+using Microsoft.AspNetCore.Identity;
+using AirportAPI.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
@@ -23,6 +24,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddEntityFrameworkMySQL().AddDbContext<Wx1Context>(options => {
     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddDefaultIdentity<AirportAPIUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<Wx1Context>();
 
 
 

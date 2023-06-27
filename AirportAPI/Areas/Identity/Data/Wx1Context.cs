@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using AirportAPI.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace AirportAPI.Entities;
+namespace AirportAPI.Areas.Identity.Data;
 
 public partial class Wx1Context : DbContext
 {
