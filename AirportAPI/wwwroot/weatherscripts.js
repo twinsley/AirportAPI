@@ -1,5 +1,5 @@
 function processData(response) {
-  let counter = 1;
+  let counter = 0;
   let parsedData = JSON.parse(response);
   let windSpeeds = 0;
   let windDirections = 0;
